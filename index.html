@@ -1,57 +1,20 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0b0d12">
-  <meta name="description" content="Test AI API — a polished browser playground for testing OpenAI-compatible AI endpoints.">
-  <title>Test AI API</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="app-shell">
-    <aside class="sidebar" id="sidebar">
-      <div class="brand"><div class="brand-mark">✦</div><div><strong>Test AI API</strong><span>endpoint playground</span></div></div>
-      <button class="new-chat" id="newChat">＋ New chat</button>
-      <div class="side-section">
-        <div class="section-label">Endpoint</div>
-        <label>API URL<input id="endpoint" value="https://interracial-introducing-numbers-resolutions.trycloudflare.com" spellcheck="false"></label>
-        <label>Model <span class="optional">(optional)</span><input id="model" value="" placeholder="Leave empty to omit model" spellcheck="false"></label>
-        <label>API key<input id="apiKey" type="password" placeholder="sk-... (kept in this tab)" spellcheck="false"></label>
-        <div class="row">
-          <label>Temperature<input id="temperature" type="number" min="0" max="2" step="0.1" value="0.7"></label>
-          <label>Max tokens<input id="maxTokens" type="number" min="1" max="32768" step="1" value="1024"></label>
-        </div>
-        <button class="secondary" id="testConnection">Test endpoint</button>
-        <div class="status" id="status"><i></i><span>Ready</span></div>
-      </div>
-      <div class="side-section">
-        <div class="section-label">Presets</div>
-        <button class="preset" data-url="https://openrouter.ai/api/v1/chat/completions" data-model="openai/gpt-4o-mini">OpenRouter · GPT-4o mini</button>
-        <button class="preset" data-url="https://api.openai.com/v1/chat/completions" data-model="gpt-4o-mini">OpenAI · GPT-4o mini</button>
-        <button class="preset" data-url="http://localhost:11434/v1/chat/completions" data-model="llama3.2">Ollama · local</button>
-      </div>
-      <div class="sidebar-foot"><span class="dot"></span> Browser-only tester <small>Keys are not saved.</small></div>
-    </aside>
-    <main class="main">
-      <header class="topbar"><button class="icon-btn mobile-only" id="menuBtn">☰</button><div class="crumb">Playground <span>/</span> Chat</div><div class="top-actions"><button class="icon-btn" id="clearBtn" title="Clear chat">⌫</button><button class="icon-btn" id="copyBtn" title="Copy last response">⧉</button></div></header>
-      <section class="chat" id="chat" aria-live="polite">
-        <div class="welcome" id="welcome">
-          <div class="welcome-icon">✦</div>
-          <h1>Test your AI endpoint.</h1>
-          <p>Set an endpoint, optionally provide a model, and inspect the response directly.</p>
-          <div class="chips"><button data-prompt="Say hello and explain what endpoint you are running on.">Endpoint info</button><button data-prompt="Give me a concise JSON object with your capabilities.">JSON response</button><button data-prompt="Write a short test response in Indonesian.">Bahasa Indonesia</button></div>
-        </div>
-      </section>
-      <div class="composer-wrap">
-        <form class="composer" id="composer">
-          <textarea id="prompt" rows="1" placeholder="Message your endpoint..." autocomplete="off"></textarea>
-          <button class="send" id="sendBtn" type="submit" aria-label="Send">↑</button>
-        </form>
-        <div class="hint">Enter to send · Shift+Enter for a new line · Your API key stays in this tab.</div>
-      </div>
-    </main>
-  </div>
-  <script src="app.js"></script>
-</body>
-</html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0d12"><meta name="description" content="Test AI API — a browser playground for testing AI endpoints."><title>Test AI API</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="app-shell">
+<aside class="sidebar" id="sidebar"><div class="brand"><div class="brand-mark">✦</div><div><strong>Test AI API</strong><span>endpoint playground</span></div></div>
+<button class="new-chat" id="newChat">＋ New chat</button>
+<div class="side-section"><div class="section-label">Endpoint</div>
+<label>API URL<input id="endpoint" value="https://interracial-introducing-numbers-resolutions.trycloudflare.com" spellcheck="false"></label>
+<label>Model <span class="optional">(optional)</span><input id="model" value="" placeholder="Leave empty to use API default" spellcheck="false"></label>
+<label>API key<input id="apiKey" type="password" value="lipz-ai-api-2026" placeholder="API key" spellcheck="false"></label>
+<div class="row"><label>Temperature<input id="temperature" type="number" min="0" max="2" step="0.1" value="0.7"></label><label>Max tokens<input id="maxTokens" type="number" min="1" max="32768" step="1" value="1024"></label></div>
+<button class="secondary" id="testConnection">Test endpoint</button><div class="status" id="status"><i></i><span>Ready</span></div>
+<div class="endpoint-note">Base URLs automatically use <code>/v1/chat/completions</code>.</div></div>
+<div class="side-section"><div class="section-label">Presets</div>
+<button class="preset" data-url="https://openrouter.ai/api/v1/chat/completions" data-model="openai/gpt-4o-mini">OpenRouter · GPT-4o mini</button>
+<button class="preset" data-url="https://api.openai.com/v1/chat/completions" data-model="gpt-4o-mini">OpenAI · GPT-4o mini</button>
+<button class="preset" data-url="http://localhost:11434/v1/chat/completions" data-model="llama3.2">Ollama · local</button></div>
+<div class="sidebar-foot"><span class="dot"></span> Browser-only tester <small>Keys are not saved.</small></div></aside>
+<main class="main"><header class="topbar"><button class="icon-btn mobile-only" id="menuBtn">☰</button><div class="crumb">Playground <span>/</span> Chat</div><div class="top-actions"><button class="icon-btn" id="clearBtn" title="Clear chat">⌫</button><button class="icon-btn" id="copyBtn" title="Copy last response">⧉</button></div></header>
+<section class="chat" id="chat" aria-live="polite"><div class="welcome" id="welcome"><div class="welcome-icon">✦</div><h1>Test your AI endpoint.</h1><p>Set an endpoint, optionally provide a model, and inspect the response directly.</p><div class="chips"><button data-prompt="Say hello and explain what endpoint you are running on.">Endpoint info</button><button data-prompt="Give me a concise JSON object with your capabilities.">JSON response</button><button data-prompt="Write a short test response in Indonesian.">Bahasa Indonesia</button></div></div></section>
+<div class="composer-wrap"><form class="composer" id="composer"><textarea id="prompt" rows="1" placeholder="Message your endpoint..." autocomplete="off"></textarea><button class="send" id="sendBtn" type="submit" aria-label="Send">↑</button></form><div class="hint">Enter to send · Shift+Enter for a new line · API key stays in this browser tab.</div></div></main></div><script src="app.js"></script></body></html>
