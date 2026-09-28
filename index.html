@@ -16,7 +16,7 @@
       <div class="side-section">
         <div class="section-label">Endpoint</div>
         <label>API URL<input id="endpoint" value="https://openrouter.ai/api/v1/chat/completions" spellcheck="false"></label>
-        <label>Model<input id="model" value="openai/gpt-4o-mini" spellcheck="false"></label>
+        <label>Model <span class="optional">(optional)</span><input id="model" value="" placeholder="Leave empty to omit model" spellcheck="false"></label>
         <label>API key<input id="apiKey" type="password" placeholder="sk-... (kept in this tab)" spellcheck="false"></label>
         <div class="row">
           <label>Temperature<input id="temperature" type="number" min="0" max="2" step="0.1" value="0.7"></label>
@@ -39,7 +39,7 @@
         <div class="welcome" id="welcome">
           <div class="welcome-icon">✦</div>
           <h1>Test your AI endpoint.</h1>
-          <p>Connect an OpenAI-compatible endpoint, choose a model, and start probing responses.</p>
+          <p>Set an endpoint, optionally provide a model, and inspect the response directly.</p>
           <div class="chips"><button data-prompt="Say hello and explain what endpoint you are running on.">Endpoint info</button><button data-prompt="Give me a concise JSON object with your capabilities.">JSON response</button><button data-prompt="Write a short test response in Indonesian.">Bahasa Indonesia</button></div>
         </div>
       </section>
