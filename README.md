@@ -1,21 +1,32 @@
 # Test AI API
 
-A polished, browser-first playground for testing AI chat endpoints.
+A polished, browser-first playground for testing AI endpoints and inspecting their responses.
 
 ## Features
 
 - Custom API endpoint URL in the sidebar
-- Custom model, API key, temperature and max tokens
-- OpenAI-compatible request format
+- **Optional model** — leave it empty and the request will not include a `model` field
+- API key, temperature and max tokens controls
+- OpenAI-compatible chat request when the endpoint supports it
 - Endpoint connection test
+- Raw JSON/text response fallback
 - Chat history for the current tab
 - Responsive ChatGPT-inspired UX
 - No backend required
 - Ready for Vercel, Netlify or GitHub Pages
 
+## Model behavior
+
+The model field is optional.
+
+- Empty model: the app sends the request without `model` and focuses on displaying the endpoint response.
+- Filled model: the app includes `model` in the JSON body.
+- The response parser accepts common formats such as `choices[0].message.content`, `output_text`, `response`, and `text`.
+- If none match, the complete JSON response is displayed instead.
+
 ## Request format
 
-The app sends:
+With a model:
 
 ```json
 {
@@ -28,7 +39,7 @@ The app sends:
 }
 ```
 
-It reads the assistant response from `choices[0].message.content` first, with fallbacks for common endpoint formats.
+Without a model, the `model` property is omitted.
 
 ## Security
 
@@ -40,5 +51,5 @@ Your AI endpoint must allow browser CORS requests.
 
 No build step is required. Deploy the repository root as a static site.
 
-- Vercel: Framework preset **Other**, build command empty, output directory `.`
-- Netlify: publish directory `.`
+- Vercel: Framework preset **Other**, build command empty, output directory `.\`
+- Netlify: publish directory `.\`
